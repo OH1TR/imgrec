@@ -175,8 +175,8 @@ class GoogLeNet(object):
             lines = [line.split(':')[1].replace('\"', '').strip() for line in f.readlines()]
             lines = lines[1:][::-1]
         for line in lines:
-            path = "%s/%s" % (model_path, line)
-            if os.path.exists(path):
+            path = line
+            if os.path.exists('%s.index' % path):
                 return path
 
 
